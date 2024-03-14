@@ -32,103 +32,15 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="search" placeholder="Cerca o inizia una nuova chat">
             </div>
-            <div id="contact-container" class="d-flex">     
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_1.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Fabio de luigi</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">16:15</div>
-                        </div>
+            <div id="contact-container" class="d-flex"> 
+                <div class="contact-list" v-for="contact in contacts">
+                    <img :src="contact.image" alt="" width="50">
+                    <div class="notification-text d-flex">
+                        <span>{{contact.fullname}}</span>
+                        <span>{{contact.activity}}</span>
+                        <div class="hour">{{contact.hour}}</div>
                     </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_2.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Michele Lamperti</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">16:05</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_3.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Samuele Bonomi</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">16:03</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_4.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Alessandro de Bortoli</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">15:50</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_5.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Giuliano Vincenti</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">15:45</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_6.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Loretta Scott-King</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">15:30</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_7.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Luciano Cadorna</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">15:20</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_io.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Marco Travaglio</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">14:12</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_io.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Fabio de luigi</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">16:15</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_io.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Fabio de luigi</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">16:15</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_io.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Fabio de luigi</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">16:15</div>
-                        </div>
-                    </div>
-                    <div class="contact-list">
-                        <img src="./assets/img/avatar_io.jpg" alt="" width="50">
-                        <div class="notification-text d-flex">
-                            <span>Fabio de luigi</span>
-                            <span>Non attivo da circa 3h</span>
-                            <div class="hour">16:15</div>
-                        </div>
-                    </div>
+                </div>
                     <!-- contact-list -->
                 </div>
                 <!-- left section -->
