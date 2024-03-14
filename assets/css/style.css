@@ -1,0 +1,366 @@
+/* #region common */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+:root{
+    --boolzap-background-primary: #dbdbd3;
+    --boolzap-background-secondary: #009688;
+    --boolzap-notification: #8edafc;
+    --boolzap-dark: #eaeaea;
+    --boolzap-darker: #b1b1b1;
+    --boolzap-chat: #d5f9ba;
+    --boolzap-lightest: white;
+}
+/* #endregion common */
+
+/* #region utilities */
+.d-flex{
+    display: flex;
+}
+
+#avatar, #chat-intestation, #search-bar{
+    background-color: var(--boolzap-dark);
+    align-items: center;
+}
+
+img{
+    border-radius: 50%;
+}
+
+input{
+    width: 90%;
+    padding: 0.5rem 1rem;
+    border-style: none;
+    
+    &:focus-visible{
+        outline: none;
+    }
+}
+/* #endregion utilities */
+
+
+body{
+    height: 100vh;
+    overflow-y: hidden;
+    background-image: linear-gradient(to bottom, #009688 0%, #009688 120px, #eaeaea 120px, #eaeaea 100%);
+}
+
+
+/* #region app */
+
+#app{
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+    max-width: 1440px;
+    justify-content: center;
+}
+
+/* #region left */
+
+#left{
+    flex-direction: column;
+    width: 30%;
+
+    & #avatar{
+        border-right: 0.5px solid var(--boolzap-darker);
+        max-height: 10%;
+        min-height: 55px;
+    }
+}
+
+#avatar .fa-solid{
+    color: var(--boolzap-darker);
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
+#left > div:not(#contact-container){
+    padding: 1.3rem;
+}
+
+.fa-bell-slash{
+    color: var(--boolzap-notification);
+    background-color: var(--boolzap-lightest);
+    border-radius: 50%;
+    padding: 0.8rem 0.6rem;
+    font-size: 1.5rem;
+}
+
+#notification{
+    background-color: var(--boolzap-notification);
+    gap: 0.8rem;
+}
+
+.notification-text{
+    flex-direction: column;
+    justify-content: center;
+
+    >span:nth-child(1){
+        font-size: 1.3rem;
+    }
+
+    >span:nth-child(2){
+        color: grey;
+        text-decoration: underline;
+    }
+}
+
+.fa-magnifying-glass{
+    padding: 0 1rem 0 0.5rem;
+}
+
+#search-bar input{
+    border-bottom-right-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+
+#search-bar .fa-magnifying-glass{
+    padding: 0.5rem 0.3rem;
+    margin-right: -5px;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    background-color: var(--boolzap-lightest);
+    
+}
+
+#search-bar span{
+    padding: 0.2rem;
+    background-color: white;
+    padding-right: 8rem;
+    color: var(--boolzap-darker);
+}
+
+.contact-list{
+    background-color: var(--boolzap-lightest);
+    border-bottom: 0.5px solid var(--boolzap-darker);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    transition: background-color 200ms;
+
+    & .notification-text > span{
+        text-decoration: none;
+    }
+}
+
+.contact-list:hover{
+   background-color: var(--boolzap-darker);
+
+}
+
+.hour{
+    position: absolute;
+    right: 1rem;
+    top: 1.35rem;
+    color: var(--boolzap-dark);
+}
+
+#contact-container{
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--boolzap-lightest);
+    max-height: 58vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#avatar{
+    justify-content: space-between;
+}
+/* #endregion left */
+
+/* #region right */
+
+#right{
+    width: 70%;
+    flex-direction: column;
+
+    & #chat-text{
+        height: 80%;
+        background-image: url(../img/mine.jpg);
+        flex-direction: column;
+        gap: 2rem;
+        padding: 3rem;
+        overflow-y: scroll;
+        max-height: 66vh;
+        align-items: end;
+    }
+}
+
+#chat-text p{
+    width: 100%;
+    max-height: 300px;
+}
+
+#chat-text div:nth-child(2){
+    align-self: flex-start;
+}
+
+#chat-text div:nth-child(1) p{
+    background-color: var(--boolzap-chat);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    align-self: flex-end;
+}
+
+#chat-text div{
+    position: relative;
+    width: 60%;
+}
+
+#chat-text div:nth-child(2) p{
+    background-color: var(--boolzap-lightest);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+#chat-text p{
+    position: relative;
+}
+
+.fa-chevron-down{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.65rem;
+}
+
+#chat-text > div span{
+    position: absolute;
+    background-color: var(--boolzap-lightest);
+    box-shadow: 3px 3px 2px #888888;
+    width: 20%;
+    top: 1.6rem;
+    right: 0.6rem;
+    z-index: 1;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+#chat-text .d-flex:hover span{
+    display: block;
+}
+#write-message{
+    background-color: var(--boolzap-dark);
+}
+
+#chat-intestation{
+    justify-content: space-between;
+    max-height: 10%;
+    align-items: center;
+    min-height: 55px;
+}
+
+#name{
+    align-items: center;
+}
+
+#right > div{
+    padding: 1rem;
+}
+
+#right-intestation{
+    justify-content: space-between;
+}
+
+#intestation-name{
+    flex-direction: column;
+}
+
+#icon{
+    gap: 1rem;
+    font-size: 1.5rem;
+    color: var(--boolzap-darker);
+}
+
+#right-intestation > .notification-text {
+    padding-left: 1rem;
+}
+
+.notification-text p{
+    color: var(--boolzap-darker);
+}
+
+#write-message{
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0 1rem;
+}
+
+#write-message span{
+    background-color: var(--boolzap-lightest);
+    color: var(--boolzap-darker);
+}
+
+#write-message .fa-solid, #write-message .fa-regular{
+    font-size: 1.5rem;
+    color: grey;
+}
+
+#write-message input{
+    padding: 1.5rem 1rem;
+    border-radius: 0.6rem;
+}
+
+/* #endregion right */
+
+/* #endregion app */
+
+
+/* #region media-query */
+@media screen and (max-width: 991px) {
+    #left{
+        width: 10%;
+    }
+
+    #left div{
+        width: 100%;
+    }
+
+    #avatar{
+        align-self: center;
+    }
+
+    #left > div span, #notification, #search-bar{
+        display: none;
+
+    }
+
+    #right{
+        width: 90%;
+    }
+
+    #contact-container{
+        max-height: 82vh;
+        align-items: center;
+    }
+
+    #avatar > div{
+        display: none;
+    }
+
+    .hour{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #left{
+        display: none;
+    }
+
+    #icon{
+        display: none;
+    }
+    
+}
+/* #endregion media-query */
