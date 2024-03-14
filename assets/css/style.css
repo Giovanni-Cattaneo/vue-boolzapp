@@ -200,7 +200,7 @@ body {
         flex-direction: column;
         gap: 2rem;
         padding: 3rem;
-        overflow-y: scroll;
+        overflow-y: auto;
         max-height: 66vh;
         align-items: end;
         overflow-y: auto;

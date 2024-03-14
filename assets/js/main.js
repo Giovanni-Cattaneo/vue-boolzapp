@@ -236,7 +236,16 @@ createApp({
                 date: "10/01/2020 16:15:22",
                 message: this.writtenMessage,
                 status: 'sent'
-            });
+            })
+            
+            setTimeout(() =>{
+                this.contacts[this.activeContact].messages.push({
+                    date: "10/01/2020 16:15:22",
+                    message: "ok, buono a sapersi",
+                    status: 'receveid'
+            }) }, 1000)
+
+        
         }
     }
 }).mount("#app")
