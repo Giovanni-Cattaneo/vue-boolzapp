@@ -73,10 +73,13 @@ createApp({
                     },
                 ]
         }
-        
+
     },
 
-    methods() {
+    methods: {
 
+        contactClick() {
+            console.log("Hello world");
+        }
     }
 }).mount("#app")

@@ -33,7 +33,7 @@
                 <input type="search" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div id="contact-container" class="d-flex"> 
-                <div class="contact-list" v-for="contact in contacts">
+                <div class="contact-list" v-for="contact in contacts" @click="contactClick">
                     <img :src="contact.image" alt="" width="50">
                     <div class="notification-text d-flex">
                         <span>{{contact.fullname}}</span>
@@ -66,9 +66,9 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div id="chat-text" class="d-flex" v-for="contact in contacts">
-                    <div class="d-flex user" v-for="(message, msgIndex) in contact.messages" v-bind:="msgIndex">
-                        <p>{{message.message}}</p>
+                <div id="chat-text" class="d-flex">
+                    <div class="d-flex user" >
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, saepe.</p>
                         <i class="fa-solid fa-chevron-down"></i>
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, suscipit.</span>
                     </div>
