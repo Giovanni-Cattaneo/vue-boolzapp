@@ -117,8 +117,8 @@ createApp({
                         hour: "15:45"
                     },
                 ],
-                inputText: "",
-                activeContact: 0
+            inputText: "",
+            activeContact: 0,
 
         }
 
@@ -132,14 +132,17 @@ createApp({
             console.log(this.activeContact);
         },
 
-        contactSearch(){
-            index = this.contacts[index]
+        contactSearch() {
             console.log("hello word")
-            if (this.inputText != index.fullname) {
-                console.log("molto male minore di 5");
-            }else{
-                console.log("molto bene maggiore di 5");
-            }
+            this.contacts.forEach(contact => {
+                if (this.inputText !== contact.fullname) {
+                    
+                } else {
+                    console.log("Nome presente");
+                    this.contacts.splice(contact !=this.inputText )   
+                }
+            });
+
 
         }
     }
