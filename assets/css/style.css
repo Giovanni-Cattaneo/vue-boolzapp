@@ -192,6 +192,7 @@ body{
         overflow-y: scroll;
         max-height: 66vh;
         align-items: end;
+        overflow-y: auto;
     }
 }
 

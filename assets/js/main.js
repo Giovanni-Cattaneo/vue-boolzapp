@@ -5,6 +5,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+
             contacts:
                 [
                     {
@@ -72,6 +73,7 @@ createApp({
                     },
                 ]
         }
+        
     },
 
     methods() {
