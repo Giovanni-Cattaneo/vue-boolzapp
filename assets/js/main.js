@@ -190,6 +190,7 @@ createApp({
                 ],
             inputText: "",
             activeContact: null,
+            writtenMessage: ""
 
         }
 
@@ -223,7 +224,7 @@ createApp({
                                 <span>${this.contacts[index].fullname}</span>
                                 <p>${this.contacts[index].activity}</p>
                             </div>
-                        </div> `
+                        </div> ` // per coloro che osservano questo lavoro, lo so che è un mattone ma non sonoi riuscito in altro modo se riesco a sistemarlo con vuejs meglio altrimenti vedrò cosa fare
             }
 
         },
@@ -246,6 +247,10 @@ createApp({
 
             })
 
+        },
+
+        writeMessage(){
+            console.log(this.writtenMessage); // vediamo il messaggio scritto nell'input
         }
     }
 }).mount("#app")
