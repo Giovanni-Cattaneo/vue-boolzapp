@@ -249,8 +249,11 @@ createApp({
 
         },
 
-        writeMessage(){
+        writeMessage(index){
+            this.activeContact = index
             console.log(this.writtenMessage); // vediamo il messaggio scritto nell'input
+            this.contacts[index].messages.push(`message : ${this.writtenMessage}`)
+            console.log(this.contacts.messages);
         }
     }
 }).mount("#app")
