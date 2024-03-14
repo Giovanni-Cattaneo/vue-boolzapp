@@ -33,19 +33,64 @@ createApp({
                         image: "./assets/img/avatar_1.jpg",
                         fullname: "Fabio De Luigi",
                         activity: "Non attivo da circa 3h",
-                        hour: "15:45"
+                        hour: "15:45",
+                        messages: [{
+                            date: '10/01/2020 15:30:55',
+                            message: 'Hai portato a spasso il gatto?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Ricordati di stendere i i cattivi',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 16:15:22',
+                            message: 'Tutto fatto!',
+                            status: 'received'
+                        }]
                     },
                     {
                         image: "./assets/img/avatar_2.jpg",
                         fullname: "Michele Lamperti",
                         activity: "Non attivo da circa 3h",
-                        hour: "15:45"
+                        hour: "15:45",
+                        messages: [{
+                            date: '10/01/2020 15:30:55',
+                            message: 'Hai portato a spasso la tartaruga?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Ricordati di appianare le divergenze',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 16:15:22',
+                            message: 'Tutto fatto!',
+                            status: 'received'
+                        }]
                     },
                     {
                         image: "./assets/img/avatar_3.jpg",
                         fullname: "Samuele Bonomi",
                         activity: "Non attivo da circa 3h",
-                        hour: "15:45"
+                        hour: "15:45",
+                        messages: [{
+                            date: '10/01/2020 15:30:55',
+                            message: 'Hai portato a spasso il cavallo?',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Ricordati di pulire la stalla',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 16:15:22',
+                            message: 'Tutto fatto!',
+                            status: 'received'
+                        }]
                     },
                     {
                         image: "./assets/img/avatar_4.jpg",
@@ -71,15 +116,31 @@ createApp({
                         activity: "Non attivo da circa 3h",
                         hour: "15:45"
                     },
-                ]
+                ],
+                inputText: "",
+                activeContact: 0
+
         }
 
     },
 
     methods: {
 
-        contactClick() {
+        contactClick(i) {
             console.log("Hello world");
+            this.activeContact = i
+            console.log(this.activeContact);
+        },
+
+        contactSearch(){
+            index = this.contacts[index]
+            console.log("hello word")
+            if (this.inputText != index.fullname) {
+                console.log("molto male minore di 5");
+            }else{
+                console.log("molto bene maggiore di 5");
+            }
+
         }
     }
 }).mount("#app")

@@ -30,10 +30,10 @@
             </div>
             <div id="search-bar" class="d-flex">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" placeholder="Cerca o inizia una nuova chat">
+                <input type="search" placeholder="Cerca o inizia una nuova chat" v-model="inputText" @keyup.enter="contactSearch()">
             </div>
             <div id="contact-container" class="d-flex"> 
-                <div class="contact-list" v-for="contact in contacts" @click="contactClick">
+                <div class="contact-list" v-for="contact in contacts" @click="contactClick(index)">
                     <img :src="contact.image" alt="" width="50">
                     <div class="notification-text d-flex">
                         <span>{{contact.fullname}}</span>
@@ -44,7 +44,6 @@
                     <!-- contact-list -->
                 </div>
                 <!-- left section -->
-
 
             </div>
 
@@ -66,9 +65,11 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </div>
                 </div>
-                <div id="chat-text" class="d-flex">
-                    <div class="d-flex user" >
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, saepe.</p>
+                <div id="chat-text" class="d-flex" >
+                    <div class="d-flex user" v-for="(contact, index) in contacts" :key="index">
+                        <div v-for="message in contact.messages">
+                            <p>{{message.message}}</p>
+                        </div>
                         <i class="fa-solid fa-chevron-down"></i>
                         <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, suscipit.</span>
                     </div>
