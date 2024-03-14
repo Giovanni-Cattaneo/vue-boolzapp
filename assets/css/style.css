@@ -204,7 +204,7 @@ body{
     align-self: flex-start;
 }
 
-#chat-text div:nth-child(1) p{
+#chat-text .user p{
     background-color: var(--boolzap-chat);
     padding: 0.5rem;
     border-radius: 1rem;
@@ -216,7 +216,7 @@ body{
     width: 60%;
 }
 
-#chat-text div:nth-child(2) p{
+#chat-text .answer p{
     background-color: var(--boolzap-lightest);
     padding: 0.5rem;
     border-radius: 1rem;
