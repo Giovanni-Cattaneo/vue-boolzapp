@@ -222,7 +222,7 @@ body{
     border-radius: 1rem;
 }
 
-#chat-text p{
+#chat-text .answer p{
     position: relative;
 }
 
