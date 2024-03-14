@@ -135,17 +135,17 @@ createApp({
         contactSearch() {
             console.log("hello word")
 
-            const textSearch = this.inputText.toLowerCase().trim()// prende il testo dell'input, lo mette in minuscolo e rimuove eventuali spazi all'inizio e alla fine
+            let textSearch = this.inputText.toLowerCase().trim()// prende il testo dell'input, lo mette in minuscolo e rimuove eventuali spazi all'inizio e alla fine
 
-            if (textSearch === "") {
-                //return, capire come riportare la lista di contatti alla situazione di partenza
-            }
+            // if (textSearch === "") {
+                 //return, capire come riportare la lista di contatti alla situazione di partenza
+            // }
             this.contacts = this.contacts.filter( function (contact){
 
                 if(contact.fullname.toLowerCase().includes(textSearch)){ // filtra e restiuisce il fullname in minuscolo se corrisponde a quello dell'input
                     return contact.fullname
                 }else{
-                    return // capire come evitare il collasso di tutta la lista se inserisco un nome che non è presente
+                    return textSearch = ""
                 }
                  
             })
