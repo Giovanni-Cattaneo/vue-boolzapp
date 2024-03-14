@@ -81,6 +81,16 @@ createApp({
                             message: 'riesci ad andare a prendere Carlotta a d equitazione?',
                             status: 'sent'
                         },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Ricordati di pagarlo stavolta non come quel cretino di tuo padre che a momenti se lo scordava',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 16:15:22',
+                            message: 'Tutto fatto!',
+                            status: 'received'
+                        }
 
                         ]
                     },
@@ -95,6 +105,16 @@ createApp({
                                 message: 'Si trova in via tagliamento vicno al sentiero che costeggia il lambro',
                                 status: 'sent'
                             },
+                            {
+                                date: '10/01/2020 15:50:00',
+                                message: "Parlo di quell'orrore della tua macchina che mi ha lasciata a piedi, vai e sistema",
+                                status: 'sent'
+                            },
+                            {
+                                date: '10/01/2020 16:15:22',
+                                message: 'Tutto fatto!',
+                                status: 'received'
+                            }
                         ]
                     },
                     {
@@ -103,6 +123,16 @@ createApp({
                         activity: "Non attivo da circa 3h",
                         hour: "15:45",
                         messages: [
+                            {
+                                date: '10/01/2020 15:50:00',
+                                message: 'Ricordati di pagarlo stavolta non come quel cretino di tuo padre che a momenti se lo scordava',
+                                status: 'sent'
+                            },
+                            {
+                                date: '10/01/2020 16:15:22',
+                                message: 'Tutto fatto!',
+                                status: 'received'
+                            },
                             {
                                 date: '10/01/2020 16:15:22',
                                 message: 'Tutto fatto!',
@@ -115,18 +145,47 @@ createApp({
                         fullname: "Loretta Scott king",
                         activity: "Non attivo da circa 3h",
                         hour: "15:45",
-                        messages: [{
-                            date: '10/01/2020 16:15:22',
-                            message: 'Tutto fatto!',
-                            status: 'received'
-                        }]
+                        messages: [
+                            {
+                                date: '10/01/2020 15:50:00',
+                                message: 'Ricordati di pagarlo stavolta non come quel cretino di tuo padre che a momenti se lo scordava',
+                                status: 'sent'
+                            },
+                            {
+                                date: '10/01/2020 16:15:22',
+                                message: 'Tutto fatto!',
+                                status: 'received'
+                            },
+                            {
+                                date: '10/01/2020 16:15:22',
+                                message: 'Tutto fatto!',
+                                status: 'received'
+                            }
+                        ]
 
                     },
                     {
                         image: "./assets/img/avatar_7.jpg",
                         fullname: "Luciano Cadorna",
                         activity: "Non attivo da circa 3h",
-                        hour: "15:45"
+                        hour: "15:45",
+                        messages: [
+                            {
+                                date: '10/01/2020 15:50:00',
+                                message: 'Ricordati di pagarlo stavolta non come quel cretino di tuo padre che a momenti se lo scordava',
+                                status: 'sent'
+                            },
+                            {
+                                date: '10/01/2020 16:15:22',
+                                message: 'Tutto fatto!',
+                                status: 'received'
+                            },
+                            {
+                                date: '10/01/2020 16:15:22',
+                                message: 'Tutto fatto!',
+                                status: 'received'
+                            }
+                        ]
                     },
                 ],
             inputText: "",
@@ -150,12 +209,21 @@ createApp({
 
                 const avatar = document.getElementById("main_avatar")
 
-                const intestation = document.getElementById("chat-intestation") 
+                const name = document.getElementById("name")
                 console.log(user);
 
                 user.innerHTML = `<p>${this.contacts[index].messages[0].message}</p>`
                 user.innerHTML += `<p>${this.contacts[index].messages[1].message}</p>`
                 answer.innerHTML = `<p>${this.contacts[index].messages[2].message}</p>`
+
+                name.innerHTML = `
+                <div id="right-intestation" class="d-flex">
+                            <img id="main_avatar" src="${this.contacts[index].image}" alt="" width="50">
+                            <div class="notification-text d-flex">
+                                <span>${this.contacts[index].fullname}</span>
+                                <p>${this.contacts[index].activity}</p>
+                            </div>
+                        </div> `
             }
 
         },
