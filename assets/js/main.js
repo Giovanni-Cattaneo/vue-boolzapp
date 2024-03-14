@@ -134,15 +134,15 @@ createApp({
 
         contactSearch() {
             console.log("hello word")
-            this.contacts.forEach(contact => {
-                if (this.inputText !== contact.fullname) {
-                    
-                } else {
-                    console.log("Nome presente");
-                    this.contacts.splice(contact !=this.inputText )   
-                }
-            });
 
+            const textSearch = this.inputText.toLowerCase().trim()// prende il testo dell'input, lo mette in minuscolo e rimuove eventuali spazi all'inizio e alla fine
+
+            if (textSearch === "") {
+                //return
+            }
+            this.contacts = this.contacts.filter( function (contact){
+                return contact.fullname.toLowerCase().includes(textSearch); // filtra e restiuisce il fullname in minuscolo se corrisponde a quello dell'input
+            })
 
         }
     }

@@ -23,6 +23,10 @@
     display: flex;
 }
 
+.d-none{
+    display: none;
+}
+
 #avatar, #chat-intestation, #search-bar{
     background-color: var(--boolzap-dark);
     align-items: center;
