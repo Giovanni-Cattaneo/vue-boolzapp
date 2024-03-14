@@ -201,34 +201,9 @@ createApp({
         contactClick(index) {
             console.log("Hello world");
 
- if (index >= 0 && index < this.contacts.length) {
-        this.activeContact = index
-
-            //     const chatText = document.getElementById("chat-text")
-
-            //     chatText.innerHTML =`
-            //     <div class="user d-flex">
-            //       <p>${this.contacts[index].messages[0].message}</p> 
-            //       <p>${this.contacts[index].messages[1].message}</p>
-
-            //     </div>
-
-            //     <div class="answer">
-            //         <p>${this.contacts[index].messages[2].message}</p>
-            //     </div>`
-
-            //     const name = document.getElementById("name")
-
-
-            //     name.innerHTML = `
-            //     <div id="right-intestation" class="d-flex">
-            //                 <img id="main_avatar" src="${this.contacts[index].image}" alt="" width="50">
-            //                 <div class="notification-text d-flex">
-            //                     <span>${this.contacts[index].fullname}</span>
-            //                     <p>${this.contacts[index].activity}</p>
-            //                 </div>
-            //             </div> ` // per coloro che osservano questo lavoro, lo so che è un mattone ma non sonoi riuscito in altro modo se riesco a sistemarlo con vuejs meglio altrimenti vedrò cosa fare
-         }
+            if (index >= 0 && index < this.contacts.length) {
+                this.activeContact = index
+            }
 
         },
 
@@ -252,14 +227,16 @@ createApp({
 
         },
 
-        writeMessage(index){
-            this.activeContact = index
-
+        writeMessage() {
             console.log(this.writtenMessage); // vediamo il messaggio scritto nell'input
 
-            this.contacts[index].messages.push(`message : ${this.writtenMessage}`)
+            console.log(this.contacts[this.activeContact].messages[1].message);
 
-            console.log(this.contacts.messages);
+            this.contacts[this.activeContact].messages.push({
+                date: "10/01/2020 16:15:22",
+                message: this.writtenMessage,
+                status: 'sent'
+            });
         }
     }
 }).mount("#app")
