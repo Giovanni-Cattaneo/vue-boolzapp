@@ -443,6 +443,7 @@ createApp({
         calcLastMessage(contact){
             const lastMessageI = contact.messages.length -1
 
+            // valuta la possibilità di inserire una condizione se non ci sono messaggi in chat con la persona, qui non necessario
             return contact.messages[lastMessageI].message
         }
     }
