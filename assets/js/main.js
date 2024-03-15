@@ -389,11 +389,6 @@ createApp({
         
 
         contactClick(index) {
-            console.log("Hello world");
-
-            
-            
-
             if (index >= 0 && index < this.contacts.length) {
                 this.activeContact = index
             }
@@ -439,6 +434,10 @@ createApp({
             }) }, 1000)
 
         
+        },
+
+        messageOption(){
+            console.log("hello world");
         }
     }
 }).mount("#app")

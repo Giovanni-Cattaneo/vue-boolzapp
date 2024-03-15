@@ -72,10 +72,12 @@
 
                 <div id="" class="d-flex chat-text" v-for="message in contacts[activeContact].messages">
                     <div class="user d-flex" v-if="message.status === 'sent'">
-                        <p>{{message.message}}</p>
+                        <p @click="messageOption()">{{message.message}}</p>
+                        <span>Ciao come va?</span>
                     </div>
                     <div class="answer" v-else>
-                        <p>{{message.message}}</p>
+                        <p @click="messageOption()">{{message.message}}</p>
+                        <span>Ciao come va?</span>
                     </div>
                 </div>
             </div>
