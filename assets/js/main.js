@@ -373,7 +373,7 @@ createApp({
                         }
                     ]
                 },
-            ],
+            ],// verificare la possibilità di mettere questo in un file secondario e usare export import cosi da alleggerire il codice
             
 
         }
