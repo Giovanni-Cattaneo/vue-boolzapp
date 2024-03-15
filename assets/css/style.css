@@ -67,7 +67,7 @@ body {
     margin-top: 2rem;
     max-width: 1440px;
     justify-content: center;
-    max-height: 84vh;
+    height: 84vh;
 }
 
 /* #region left */
@@ -75,6 +75,7 @@ body {
 #left {
     flex-direction: column;
     width: 30%;
+    background-color: var(--boolzap-lightest);
 
     & #avatar {
         border-right: 0.5px solid var(--boolzap-darker);
@@ -177,7 +178,7 @@ body {
     width: 100%;
     background-color: var(--boolzap-lightest);
     max-height: 58vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -200,6 +201,7 @@ body {
     background-image: url(../img/mine.jpg);
     overflow-y: auto;
     height: 100%;
+    
 }
 
 .chat-text {
