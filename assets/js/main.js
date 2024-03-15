@@ -381,13 +381,7 @@ createApp({
     },
 
     methods: {
-
-        // $(message(index) {
-        //     lastMessage = lastMessage : this.contacts[this.activeContact].messages.message
-        // }),
-
-        
-
+ 
         contactClick(index) {
             if (index >= 0 && index < this.contacts.length) {
                 this.activeContact = index
