@@ -237,6 +237,8 @@ createApp({
                 message: this.writtenMessage,
                 status: 'sent'
             })
+
+            this.writtenMessage = ""
             
             setTimeout(() =>{
                 this.contacts[this.activeContact].messages.push({
