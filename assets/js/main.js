@@ -212,18 +212,22 @@ createApp({
 
             let textSearch = this.inputText.toLowerCase().trim()// prende il testo dell'input, lo mette in minuscolo e rimuove eventuali spazi all'inizio e alla fine
 
+            this.inputText = ""
+
             // if (textSearch === "") {
             //return, capire come riportare la lista di contatti alla situazione di partenza
             // }
             this.contacts = this.contacts.filter(function (contact) {
 
                 if (contact.fullname.toLowerCase().includes(textSearch)) { // filtra e restiuisce il fullname in minuscolo se corrisponde a quello dell'input
+                    
                     return contact.fullname
-                } else {
-                    return
-                }
-
+                } 
             })
+
+            if (this.inputText === "") {
+                console.log("it doesent work");
+            }
 
         },
 

@@ -39,7 +39,7 @@
                     <img :src="contact.image" alt="" width="50">
                     <div class="notification-text d-flex">
                         <span>{{contact.fullname}}</span>
-                        <span>{{contact.activity}}</span>
+                        <span>{{contact.messages[2].message}}</span>
                         <div class="hour">{{contact.hour}}</div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
 
         <div id="right" class="d-flex">
             <div id="chat-intestation" class="d-flex">
-                <div id="name" class="d-flex" >
+                <div id="name" class="d-flex">
                     <div id="right-intestation" class="d-flex">
                         <img id="main_avatar" :src="contacts[activeContact].image" alt="" width="50">
                         <div class="notification-text d-flex">
@@ -67,16 +67,18 @@
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                 </div>
             </div>
+            <div class="chat-container">
 
-            <div id="" class="d-flex chat-text" v-for="message in contacts[activeContact].messages">
-                <div class="user d-flex" v-if="message.status === 'sent'">
-                    <p>{{message.message}}</p>
-                </div>
-                <div class="answer" v-else>
-                    <p>{{message.message}}</p>
+
+                <div id="" class="d-flex chat-text" v-for="message in contacts[activeContact].messages">
+                    <div class="user d-flex" v-if="message.status === 'sent'">
+                        <p>{{message.message}}</p>
+                    </div>
+                    <div class="answer" v-else>
+                        <p>{{message.message}}</p>
+                    </div>
                 </div>
             </div>
-
             <div id="write-message" class="d-flex">
                 <i class="fa-regular fa-face-smile"></i>
                 <input type="text" placeholder="Scrivi un messaggio" v-model="writtenMessage"
