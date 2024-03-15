@@ -191,7 +191,7 @@ createApp({
             inputText: "",
             activeContact: 0,
             writtenMessage: "",
-            lastMessage : 0,
+            lastMessage : 1,
             copyOfContacts : 
             [
                 {
@@ -438,6 +438,12 @@ createApp({
 
         messageOption(){
             console.log("hello world");
+        },
+
+        calcLastMessage(contact){
+            const lastMessageI = contact.messages.length -1
+
+            return contact.messages[lastMessageI].message
         }
     }
 }).mount("#app")
