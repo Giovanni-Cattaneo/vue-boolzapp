@@ -191,19 +191,18 @@ body {
 #right {
     width: 70%;
     flex-direction: column;
+    max-height: 84vh;
+    overflow-y: auto;
 
 }
 
 .chat-text {
-        height: 80%;
         background-image: url(../img/mine.jpg);
         flex-direction: column;
         gap: 2rem;
         padding: 3rem;
-        overflow-y: auto;
-        max-height: 66vh;
         align-items: end;
-        overflow-y: auto;
+        height: 68vh;
 }
 
 
