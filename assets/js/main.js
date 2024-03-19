@@ -192,6 +192,7 @@ createApp({
             activeContact: 0,
             writtenMessage: "",
             lastMessage: 0,
+            randomSentence: null,
             copyOfContacts:
                 [
                     {
@@ -382,6 +383,14 @@ createApp({
 
     methods: {
 
+        callApi() {
+            axios.get("https://flynn.boolean.careers/exercises/api/random/sentence").then((response) => {
+                console.log(response.data.response)
+
+                this.randomSentence = response.data.response
+            })
+        },
+
         contactClick(index) {
             if (index >= 0 && index < this.contacts.length) {
                 this.activeContact = index
@@ -408,6 +417,8 @@ createApp({
         },
 
         writeMessage() {
+
+            this.callApi()
             console.log(this.writtenMessage); // vediamo il messaggio scritto nell'input
 
             console.log(this.contacts[this.activeContact].messages[1].message);
@@ -421,7 +432,7 @@ createApp({
                 setTimeout(() => {
                     this.contacts[this.activeContact].messages.push({
                         date: "10/01/2020 16:15:22",
-                        message: "ok, buono a sapersi",
+                        message: this.randomSentence,
                         status: 'receveid'
                     })
                 }, 1000)
@@ -442,6 +453,6 @@ createApp({
 
             // valuta la possibilità di inserire una condizione se non ci sono messaggi in chat con la persona, qui non necessario
             return contact.messages[lastMessageI].message
-        }
+        },
     }
 }).mount("#app")
